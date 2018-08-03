@@ -1,8 +1,15 @@
-# BOT
+## Azure Bot Active
 
-1.	At first step, when you connect to Time officer Bot in skype channel, BOT would represent SignIn Card. 
+Azure BOT with Azure AD Sign in and LUIS capabilities that provides late coming member list and allow admin to auto deduct leave or send intimation via email as per action taken.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+At first step, BOT would represent SignIn Card. Login with Azure AD user account, on sucessfully login you can access BOT functionality.
 
 # Code to show Signin card "BasicLuisDialog"
+
   #region Login
 
         public async Task<string> UserInfo(string Token)
@@ -136,13 +143,57 @@
             }
         }
 
-        
-
     }
     
 3. SharePointHelpers contains code for authorization callback that can be reused for office 365 authentication in other application also. 
     
 4. Replace Constants values as per needed.
+
+### References to create Azure BOT Service, Developing, Testing, and publish on Azure.
+
+1. Create a bot with Bot Service - https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart?view=azure-bot-service-3.0
+2. Create a bot with the Bot Builder SDK for .NET - https://docs.microsoft.com/en-us/azure/bot-service/dotnet/bot-builder-dotnet-quickstart?view=azure-bot-service-3.0
+3. Call a LUIS endpoint using C# - https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-get-started-cs-get-intent
+
+
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+1. Download / Clone code. 
+2. Repleace web.config values as below. 
+
+You will get MicrosoftAppId and MicrosoftAppPassword on creating azure bot app. You will get LUIS api key and App id on creating LUIS app. Copy those values and replace to below code.
+
+```
+    <add key="MicrosoftAppId" value="" />
+    <add key="MicrosoftAppPassword" value="" />
+    <add key="LuisAPIKey" value=""/>
+    <add key="LuisAppId" value="" />
+```
+
+3. Create Azure Active Directory application https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications. Copy value of application id and application secret and replace values of SharepointAppId, and SharepointAppSecret respectively [ Constants.Cs class ]
+
+
+## Debug Code
+
+[Debug bots with the Bot Framework Emulator](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator?view=azure-bot-service-3.0)
+
+## Deployment
+
+1. [Deploy your bot to Azure](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-3.0)
+2. [Publish a bot to Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-continuous-deployment?view=azure-bot-service-3.0)
+
+
+## Authors
+
+* **Hiral Patel** (https://github.com/mehiralpatel)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
     
 5. In case, you want to more about code, or any difficulties please contact at mehiralpatel@gmail.com.
     
