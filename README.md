@@ -1,6 +1,6 @@
 ## Azure Bot Framework with Multi-tenant Azure AD authentication
 
-Azure BOT with Azure AD Sign in and LUIS capabilities that provides late coming member list and allow admin to auto deduct leave or send intimation via email as per action taken.
+Azure BOT app with multi tenant Azure AD authentication.
 
 ## Getting Started
 
